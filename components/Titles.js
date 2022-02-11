@@ -12,7 +12,7 @@ function Titles() {
           objectFit="cover"
           className={style.image}
         />
-        <video autoPlay loop playsInline className={style.vid}>
+        <video autoPlay muted loop playsInline className={style.vid}>
           <source src="/videos/disney.mp4" />
         </video>
       </div>
@@ -24,7 +24,7 @@ function Titles() {
           objectFit="cover"
           className={style.image}
         />
-        <video autoPlay loop playsInline className={style.vid}>
+        <video autoPlay loop muted playsInline className={style.vid}>
           <source src="/videos/pixar.mp4" />
         </video>
       </div>
@@ -36,7 +36,7 @@ function Titles() {
           objectFit="cover"
           className={style.image}
         />
-        <video autoPlay loop playsInline className={style.vid}>
+        <video autoPlay loop playsInline muted className={style.vid}>
           <source src="/videos/marvel.mp4" />
         </video>
       </div>
@@ -48,7 +48,7 @@ function Titles() {
           objectFit="cover"
           className={style.image}
         />
-        <video autoPlay loop playsInline className={style.vid}>
+        <video autoPlay loop playsInline muted className={style.vid}>
           <source src="/videos/star-wars.mp4" />
         </video>
       </div>
@@ -60,7 +60,7 @@ function Titles() {
           objectFit="cover"
           className={style.image}
         />
-        <video autoPlay loop playsInline className={style.vid}>
+        <video autoPlay loop playsInline muted className={style.vid}>
           <source src="/videos/national-geographic.mp4" />
         </video>
       </div>
