@@ -1,0 +1,34 @@
+.navlinks {
+  cursor: pointer;
+  a {
+    @keyframes animate {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    &:hover span::after {
+      animation: animate 0.1s linear forwards;
+    }
+    .icon {
+      margin-right: 10px;
+      margin-bottom: 7px;
+      font-size: 18px;
+    }
+    span {
+      position: relative;
+      font-weight: bolder;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0;
+        background: white;
+        height: 2px;
+      }
+    }
+  }
+}

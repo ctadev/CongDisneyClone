@@ -1,0 +1,44 @@
+@import "./global.scss";
+
+.navbar {
+  position: sticky;
+  background: #040714;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  section {
+    @include row-center;
+    .image {
+      cursor: pointer;
+    }
+    .LinksContainer {
+      @include row-center;
+      margin-left: 3rem;
+      gap: 2rem;
+      @include desktop {
+        display: none;
+      }
+    }
+    h3 {
+      margin-right: 1rem;
+      @include large {
+        display: none;
+      }
+    }
+    .avatar{
+        cursor: pointer;
+    }
+    button{
+        border: 1px solid white;
+        padding: 5px 12px 6px 12px;
+        border-radius: 5px;
+        &:hover{
+            background: white;
+            color: black;
+        }
+    }
+  }
+}

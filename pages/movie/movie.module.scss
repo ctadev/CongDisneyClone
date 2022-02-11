@@ -1,0 +1,157 @@
+@import "../../components/global.scss";
+
+.details {
+  position: relative;
+  .videoContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0;
+    right: 0;
+    padding: 0 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1000;
+    padding-top: 3rem;
+    opacity: 1;
+    transition: 1s all ease;
+    .title {
+      width: 100%;
+      background: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      h1 {
+        margin-left: 1rem;
+      }
+      button {
+        background: rgb(34, 33, 33);
+        .icon {
+          font-size: 2rem;
+        }
+        &:hover {
+          background: rgba(255, 255, 255, 0.281);
+        }
+      }
+    }
+    .video {
+      position: relative;
+      max-width: 1200px;
+      height: 50vw;
+      max-height: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .videoContainer.hide {
+    opacity: 0;
+    z-index: 0;
+  }
+
+  .imageContainer {
+    position: relative;
+    min-height: calc(100vh - 80px);
+  }
+  .info {
+    position: absolute;
+    left: 5%;
+    top: 45%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    @include mobile {
+      top: 20%;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bolder;
+      margin-bottom: 1rem;
+      @include mobile {
+        font-size: 1.5rem;
+      }
+      @include tablet {
+        font-size: 2rem;
+      }
+    }
+    .genre {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      width: 100%;
+      flex-wrap: wrap;
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+    p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      width: 100%;
+      @include tablet {
+        font-size: 1rem;
+      }
+    }
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      cursor: pointer;
+      .play {
+        width: 6rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        color: black;
+        img {
+          width: 25px;
+          height: 25px;
+        }
+        &:hover {
+          background: rgba(255, 255, 255, 0.795);
+          border: white 1px solid;
+        }
+      }
+      .trailer {
+        width: 8rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        border: 1px solid white;
+        padding: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.493);
+        color: white;
+        img {
+          width: 25px;
+          height: 25px;
+        }
+        &:hover {
+          background: rgba(255, 255, 255, 0.308);
+        }
+      }
+    }
+  }
+  .overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.205);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .overlay.darker {
+    background: rgba(0, 0, 0, 0.842);
+    z-index: 200;
+  }
+}

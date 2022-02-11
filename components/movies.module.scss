@@ -1,0 +1,66 @@
+@import "./global.scss";
+
+.movies {
+  h1 {
+    padding-left: 25px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    @include mobile {
+      font-size: 1.1rem;
+    }
+  }
+  section {
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: 14vw;
+    margin: 0 2rem 1rem 1rem;
+    @include desktop {
+      height: 22vw;
+    }
+    @include tablet {
+      height: 24vw;
+    }
+    @include mobile {
+      height: 35vw;
+    }
+    .container {
+      display: flex;
+      gap: 1rem;
+      position: absolute;
+      left: 10px;
+      top: 8%;
+      .imageContainer {
+        position: relative;
+        height: 11vw;
+        width: 17vw;
+        border: 3px solid rgba(209, 208, 208, 0);
+        border-radius: 5px;
+        transition: 0.3s all ease;
+        @include desktop {
+          height: 19vw;
+          width: 27vw;
+        }
+        @include tablet {
+          height: 21vw;
+          width: 30vw;
+        }
+        @include mobile {
+          height: 27vw;
+          width: 35vw;
+        }
+        cursor: pointer;
+        &:hover {
+          border: 5px solid rgb(209, 208, 208);
+          transform: scale(1.05);
+        }
+        .image {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
