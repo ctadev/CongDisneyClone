@@ -9,19 +9,23 @@ import ReactPlayer from "react-player";
 import CloseIcon from "@mui/icons-material/Close";
 
 function Show({ result }) {
-  console.log(result);
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const { data: session } = useSession();
   const [showPlayer, setShowPlayer] = useState(false);
+  console.log(result)
 
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
   );
 
+  const exit = () => {
+    setShowPlayer(false);
+  };
+
   return (
     <main>
       <Head>
-        <title>{result.title || result.original_name}</title>
+        <title>{result.name || result.original_name}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={`Disney's ${result.title} movie`} />
       </Head>
@@ -29,6 +33,7 @@ function Show({ result }) {
       {session ? (
         <section className={style.details}>
           <div
+            onClick={() => exit()}
             className={
               showPlayer
                 ? style.videoContainer
@@ -36,7 +41,7 @@ function Show({ result }) {
             }
           >
             <div className={style.title}>
-              <h1>{result.title || result.original_name} : Trailer</h1>
+              <h1>{result.name || result.original_name} : Trailer</h1>
               <button onClick={() => setShowPlayer(!showPlayer)}>
                 <CloseIcon className={style.icon} />
               </button>
@@ -85,10 +90,15 @@ function Show({ result }) {
                 <img alt="" src="/images/play-icon-white.svg" />
                 <span>TRAILER</span>
               </button>
+              <img src="" />
             </div>
             <p>{result.overview}</p>
           </div>
-          <div className={style.overlay}></div>
+          <div
+            className={
+              showPlayer ? `${style.overlay} ${style.darker}` : style.overlay
+            }
+          ></div>
         </section>
       ) : (
         <Login />

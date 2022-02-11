@@ -42,7 +42,7 @@ function Nav() {
       </section>
       {session ? (
         <section>
-          <h3>My Profile</h3>
+          <h3>{session.user.name}</h3>
           <Avatar
             className={style.avatar}
             alt="Remy Sharp"

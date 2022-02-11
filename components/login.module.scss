@@ -1,0 +1,44 @@
+@import './global.scss';
+
+.login {
+  position: relative;
+  .imageContainer {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    z-index: -1;
+  }
+  .info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    top: 25%;
+    z-index: 5;
+    button{
+        background: rgb(49, 108, 236);
+        width: 90%;
+        height: 3rem;
+        border-radius: 5px;
+        max-width: 900px;
+        font-size: 1.3rem;
+        font-weight: bolder;
+    }
+    .brand{
+        padding: 0 1rem;
+    }
+    p{
+        font-size: 1.1rem;
+        padding: 0 1rem;
+        text-align: center;
+        @include mobile{
+            font-size: 0.9rem;
+        }
+    }
+    .logo{
+        padding: 0 1rem;
+    }
+  }
+}

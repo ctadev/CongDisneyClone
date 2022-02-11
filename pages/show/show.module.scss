@@ -5,11 +5,11 @@
   .videoContainer {
     position: absolute;
     height: 100%;
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     top: 0%;
     left: 0;
     right: 0;
+    padding: 0 3rem;
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
@@ -22,6 +22,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
       h1 {
         margin-left: 1rem;
       }
@@ -37,7 +40,11 @@
     }
     .video {
       position: relative;
-      padding-top: 60.5%;
+      max-width: 1200px;
+      height: 50vw;
+      max-height: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
   .videoContainer.hide {
@@ -142,5 +149,9 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .overlay.darker {
+    background: rgba(0, 0, 0, 0.842);
+    z-index: 200;
   }
 }

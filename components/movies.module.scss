@@ -9,6 +9,9 @@
       font-size: 1.1rem;
     }
   }
+  section::-webkit-scrollbar {
+  display: none;
+}
   section {
     position: relative;
     overflow-x: scroll;
