@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Nav from "../components/Nav";
-import { getSession, useSession, signIn, signOut } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import Slider from "../components/Slider";
 import Login from "../components/Login";
 import Titles from "../components/Titles";
 import Movies from "../components/Movies";
+import Test from "../components/Test";
 
 export default function Home({
   popularMovies,
@@ -29,30 +30,26 @@ export default function Home({
         <>
           <Slider />
           <Titles />
-          <Movies
+          <Test
             results={popularMovies}
             title="Recommended For You"
             type="movie"
           />
-          <Movies results={popularShows} title="New to Disney+" type="show" />
-          <Movies
+          <Test results={popularShows} title="New to Disney+" type="show" />
+          <Test
             results={top_ratedMovies}
             title="Star Highlights"
             type="movie"
           />
-          <Movies results={top_ratedShows} title="Trending" type="show" />
-          <Movies results={popularMovies2} title="Popular" type="movie" />
-          <Movies
-            results={popularShows2}
-            title="Upcoming Movies"
-            type="show"
-          />
-          <Movies
+          <Test results={top_ratedShows} title="Trending" type="show" />
+          <Test results={popularMovies2} title="Popular" type="movie" />
+          <Test results={popularShows2} title="Upcoming Movies" type="show" />
+          <Test
             results={top_ratedMovies2}
             title="Action and Adventure"
             type="movie"
           />
-          <Movies results={top_ratedShows2} title="Romance" type="show" />
+          <Test results={top_ratedShows2} title="Romance" type="show" />
         </>
       ) : (
         <Login />

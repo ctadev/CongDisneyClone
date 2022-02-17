@@ -13,6 +13,7 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+   --swiper-theme-color: white;
 }
 
 @tailwind base;
@@ -23,4 +24,63 @@ a {
   body {
     @apply bg-[#040714] text-[#f9f9f9];
   }
+}
+
+.swiper {
+  width: 95%;
+  height: 100px;
+}
+
+@media (min-width: 500px) {
+  .swiper {
+    height: 22VW;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper {
+    height: 15VW;
+  }
+}
+
+@media (min-width: 1400px) {
+  .swiper {
+    height: 13VW;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid rgba(209, 208, 208, 0);
+  transition: 0.3s all ease;
+}
+
+.swiper-slide img:hover {
+  border: 5px solid rgb(209, 208, 208);
+  transform: scale(1.05);
 }
