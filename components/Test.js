@@ -5,19 +5,37 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Keyboard, Navigation } from "swiper";
+import { useState, useEffect } from "react";
 
 function Test({ results, title, type }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
+  const [size, setSize] = useState(null);
+  let arrowBtn = true;
+
+  useEffect(() => {
+    setSize(window.innerWidth);
+    const handleResize = () => {
+      setSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  if (size < 768) {
+    arrowBtn = false;
+  }
+
   return (
     <main className={style.test}>
       <h1>{title}</h1>
       <Swiper
-        spaceBetween={30}
         keyboard={{
           enabled: true,
         }}
-        navigation={true}
+        navigation={arrowBtn}
         modules={[Keyboard, Navigation]}
         className="mySwiper"
         breakpoints={{
